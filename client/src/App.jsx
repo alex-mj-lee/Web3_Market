@@ -5,6 +5,7 @@ import Mainpage from "./pages/Mainpage";
 import NftMarket from "./pages/NftMarket";
 import NftPage from "./pages/NftPage";
 import Profile from "./pages/Profile";
+import Dex from "./pages/Dex";
 import Footer from "./components/Footer";
 
 import { NFTContextProvider } from "./context/NFTContext";
@@ -20,8 +21,9 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Mainpage />} />
               <Route path="/NftMarket" element={<NftMarket />} />
-              <Route path="/NftPage/:tokenId" element={<NftPage />} />
+              <Route path="/nftPage/:tokenId" element={<NftPage />} />
               <Route path="/Profile" element={<Profile />} />
+              <Route path="/Dex" element={<Dex />} />
             </Routes>
             <Footer />
           </Router>

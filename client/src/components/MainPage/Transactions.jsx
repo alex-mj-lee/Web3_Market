@@ -67,7 +67,7 @@ const Transactions = () => {
   const { currentAccount, transactions } = useContext(TransactionContext);
 
   return (
-    <div className="w-full gradient-bg-transactions lg:h-[90%]">
+    <div className="w-full gradient-bg-transactions lg:h-[70vh]">
       <div className="flex flex-col py-12 w-full justify-center items-center lg:max-w-7xl md:max-w-2xl mx-auto px-4 ">
         {currentAccount ? (
           <h3 className="text-white text-3xl text-center my-2">

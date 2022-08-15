@@ -2,7 +2,7 @@ import React, { useEffect, useState, createContext } from "react";
 import { ethers } from "ethers";
 import axios from "axios";
 import { nftMarketAddress, nftMarketABI } from "../utils/constants";
-import { uploadFileToIPFS, uploadJSONToIPFS } from "../../pinata";
+import { uploadFileToIPFS, uploadJSONToIPFS } from "../pinata";
 
 const sampleData = [
   {
@@ -96,7 +96,7 @@ export const NFTContextProvider = ({ children }) => {
   const listNFT = async (e) => {
     e.preventDefault();
     const { name, description, price } = formParams;
-
+    console.log(name, description, price, fileURL);
     if (!name || !description || !price || !fileURL) {
       return alert("Please Add Info");
     }
@@ -135,17 +135,6 @@ export const NFTContextProvider = ({ children }) => {
       setNftIsLoading(false);
       return alert(err.message);
     }
-  };
-
-  const getNFTdata = async (tokenId) => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    let contract = new ethers.Contract(nftMarketAddress, nftMarketABI, signer);
-
-    const tokenURI = await contract.tokenURI(tokenId);
-    const listedToken = await contract.getListedTokenForId(tokenId);
-    let meta = await axios.get(tokenURI);
-    meta = meta.data;
   };
 
   ////////////  Getting wallets NFTs  //////

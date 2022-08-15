@@ -74,22 +74,22 @@ const Navbar = () => {
             <li className="text-xl w-full my-2">
               <AiOutlineClose onClick={() => setToggleMenu(false)} />
             </li>
-            <Link to={"/"}>
+            <Link to={"/"} onClick={() => setToggleMenu(false)}>
               <li className="mx-4 cursor-pointer ${classProps hover:border-b hover:border-white">
                 Home
               </li>
             </Link>
-            <Link to={"/NftMarket"}>
+            <Link to={"/NftMarket"} onClick={() => setToggleMenu(false)}>
               <li className="mx-4 cursor-pointer ${classProps hover:border-b hover:border-white">
                 NftMarket
               </li>
             </Link>
-            <Link to={"/DeX"}>
+            <Link to={"/DeX"} onClick={() => setToggleMenu(false)}>
               <li className="mx-4 cursor-pointer ${classProps hover:border-b hover:border-white">
                 DeX
               </li>
             </Link>
-            <Link to={"/Profile"}>
+            <Link to={"/Profile"} onClick={() => setToggleMenu(false)}>
               <li className="mx-4 cursor-pointer ${classProps hover:border-b hover:border-white">
                 Profile
               </li>

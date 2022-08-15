@@ -79,11 +79,11 @@ const Profile = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col mx-auto my-8 sm:mt-16 lg:max-w-5xl h-full">
+    <div className="w-full flex flex-col mx-auto my-8 sm:mt-16 lg:max-w-5xl sm:h-[75vh]">
       <div className="my-5">
         <img
           src={soondae}
-          className="rounded-[50%] h-1/5 w-1/5 border-2 border-white object-contain mx-auto"
+          className="rounded-[50%] h-40 w-42 border-2 border-white object-contain mx-auto"
         />
         <p className="text-white text-center mt-4">Alex's ETH Wallet</p>
       </div>
@@ -91,6 +91,7 @@ const Profile = () => {
         <p className="text-white text-3xl text-center">My NFT</p>
         <div className="mt-14">
           <Swiper
+            className="pb-10"
             modules={[Pagination]}
             spaceBetween={20}
             pagination={{ clickable: true }}
@@ -110,7 +111,7 @@ const Profile = () => {
           >
             {myNftData.map((value, index) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={index}>
                   <NftCard data={value} key={index} />
                 </SwiperSlide>
               );

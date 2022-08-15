@@ -34,15 +34,15 @@ const Welcome = () => {
   };
 
   return (
-    <div className="flex w-full justify-center items-center radient-bg-welcome lg:h-screen py-24">
+    <div className="flex w-full justify-center items-center radient-bg-welcome lg:h-screen pb-32">
       <div className="flex sm:w-[75%] w-[90%] lg:flex-row flex-col justify-between  lg:w-[1200px] lg:mx-14  ">
-        <div className="flex flex-1 justify-start flex-col  lg:mt-[15%] lg:pl-10">
-          <h1 className="text-3xl sm:text-6xl text-white text-gradient py-1">
+        <div className="flex flex-1 justify-start flex-col  lg:mt-[15%]">
+          <h1 className="lg:w-[600px] text-3xl sm:text-7xl text-white  sm:font-semibold py-1">
             Send Crypto <br /> across the world
           </h1>
-          <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
-            Explort the crypto world. Buy and sell cryptocurrencies easily on
-            Krypto.
+          <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-xl text-opacity-80">
+            Explore the crypto world.
+            <br /> Buy and sell cryptocurrencies easily on Krypto.
           </p>
           {!currentAccount ? (
             <button
@@ -60,7 +60,7 @@ const Welcome = () => {
         </div>
 
         <div className="flex flex-col flex-1 items-center  w-full mf:mt-5 mt-10 lg:items-end lg:pr-20 ">
-          <div className="p-3 justify-end items-start flex-col rounded-xl h-48 sm:h-44 sm:w-80 w-[90%] my-5 eth-card white-glassmorphism">
+          <div className="p-3 justify-end items-start flex-col rounded-xl h-48 sm:h-52 sm:w-96 w-[90%] my-5 eth-card white-glassmorphism">
             <div className="flex justify-between flex-col w-full h-full">
               <div className="flex justify-between items-start">
                 <div className=" flex w-10 h-10 rounded-full border-2 border-white justify-center items-center">
@@ -78,7 +78,7 @@ const Welcome = () => {
               </div>
             </div>
           </div>
-          <div className="p-5 sm:w-80 w-[90%] flex flex-col justify-start items-center blue-glassmorphism">
+          <div className="p-5 sm:w-96 w-[90%] flex flex-col justify-start items-center blue-glassmorphism">
             <Input
               placeholder="Address To"
               name="addressTo"
