@@ -38,13 +38,13 @@ const Footer = () => {
         <div className="flex justify-center items-center flex-col mt-5">
           <p className="text-white text text-center">Come Join us</p>
           <p className="text-white text-sm text-center">
-            infor@kryptomastery.com
+            alex.lee6200@gmail.com
           </p>
         </div>
         <div className="w-full h-[0.25px] bg-gray-400 mt-5"></div>
         <div className=" w-full flex justify-between items-center mt-3">
           {" "}
-          <p className="text-white text-sm text-center">@kryptomastery 2022</p>
+          <p className="text-white text-sm text-center">@alex2022</p>
           <p className="text-white text-sm text-center">All rights reserved</p>
         </div>
       </div>
