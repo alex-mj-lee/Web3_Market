@@ -3,17 +3,13 @@
 import axios from "axios";
 import FormData from "form-data";
 
-// const key = process.env.REACT_APP_PINATA_KEY;
-// const secret = process.env.REACT_APP_PINATA_SECRET;
-
 export const uploadJSONToIPFS = async (JSONBody) => {
   const url = `https://api.pinata.cloud/pinning/pinJSONToIPFS`;
   return axios
     .post(url, JSONBody, {
       headers: {
-        pinata_api_key: "63bfe7208b5b66f11f58",
-        pinata_secret_api_key:
-          "25c14afad97f170d42bc374fdc23a8f1565dd13e1596729d27938911e6a3c4a6",
+        pinata_api_key: process.env.REACT_APP_PINATA_KEY,
+        pinata_secret_api_key: process.env.REACT_APP_PINATA_SECRET,
       },
     })
     .then(function (response) {
@@ -69,9 +65,8 @@ export const uploadFileToIPFS = async (file) => {
       maxBodyLength: "Infinity",
       headers: {
         "Content-Type": `multipart/form-data; boundary=${data._boundary}`,
-        pinata_api_key: "63bfe7208b5b66f11f58",
-        pinata_secret_api_key:
-          "25c14afad97f170d42bc374fdc23a8f1565dd13e1596729d27938911e6a3c4a6",
+        pinata_api_key: process.env.REACT_APP_PINATA_KEY,
+        pinata_secret_api_key: process.env.REACT_APP_PINATA_SECRET,
       },
     })
     .then(function (response) {
