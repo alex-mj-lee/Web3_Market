@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import soondae from "./French.png";
 import NftCard from "../components/NftMarket/NftCard";
+import { shortenAddress } from "../utils/shortenAddress";
 import { NFTContext } from "../context/NFTContext";
+import { TransactionContext } from "../context/TransactionContext";
 
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -73,6 +75,7 @@ const sampleData = [
 
 const Profile = () => {
   const { myNftData, totalPrice, getMyNftData } = useContext(NFTContext);
+  const { currentAccount } = useContext(TransactionContext);
 
   useEffect(() => {
     getMyNftData();
@@ -85,7 +88,13 @@ const Profile = () => {
           src={soondae}
           className="rounded-[50%] h-40 w-42 border-2 border-white object-contain mx-auto"
         />
-        <p className="text-white text-center mt-4">Alex's ETH Wallet</p>
+        {currentAccount ? (
+          <p className="text-white text-center mt-4">
+            {shortenAddress(currentAccount)}
+          </p>
+        ) : (
+          <p className="text-white text-center mt-4">Alex's ETH Wallet</p>
+        )}
       </div>
       <div>
         <p className="text-white text-3xl text-center">My NFT</p>
@@ -109,13 +118,17 @@ const Profile = () => {
               },
             }}
           >
-            {myNftData.map((value, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <NftCard data={value} key={index} />
-                </SwiperSlide>
-              );
-            })}
+            {myNftData ? (
+              myNftData.map((value, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <NftCard data={value} key={index} />
+                  </SwiperSlide>
+                );
+              })
+            ) : (
+              <p>You don't have any NFTs</p>
+            )}
           </Swiper>
         </div>
       </div>
