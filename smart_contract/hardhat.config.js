@@ -4,7 +4,7 @@ require("@nomiclabs/hardhat-waffle");
 require("dotenv").config();
 
 module.exports = {
-  solidity: "0.8.1",
+  solidity: "0.8.4",
   networks: {
     goerli: {
       url: process.env.APP_ALCHEMY_API_URL,
