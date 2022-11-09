@@ -6,7 +6,7 @@ import { shortenAddress } from "../utils/shortenAddress";
 
 import { TransactionContext } from "../context/TransactionContext";
 
-import logo from "../images/logo.png";
+import logo from "../assets/aleximage.jpg";
 
 const Navbar = () => {
   const { connectWallet, currentAccount } = useContext(TransactionContext);
@@ -16,7 +16,11 @@ const Navbar = () => {
     <nav className="w-full flex justify-between items-center p-4 lg:py-4 lg:mx-auto lg:max-w-7xl">
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
         <Link to={"/"}>
-          <img src={logo} alt="logo" className="w-32 cursor-pointer" />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-20 h-20 cursor-pointer rounded-full"
+          />
         </Link>
       </div>
       <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial ">
